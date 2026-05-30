@@ -1,3 +1,35 @@
 <!DOCTYPE html>
+  <html lang="en">
   <head>
-    <div id = "live-clock">00:00:00</div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Clock</title>
+    <style>
+      #live-clock {
+        font-size: 48px;
+        font-family: 'comic sans ms', sans-serif;
+        color: #2a09a0;
+        text-align: center;
+        margin-top: 20%;
+      }
+    </style>
+      <body>
+        <div id = "live-clock">00:00:00</div>
+          <script>
+            function updateClock() {
+              const now = new Date();
+              const timeString = now.toLocaleTimeString('en-US', {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+              });
+              document.getElementById('live-clock').textContent = timeString;
+            }
+
+            // clock will update every second
+            setInterval(updateCustomClock, 1000);
+            updateCustomClock(); // initial call to display clock immediately
+          </script>
+  </body>
+</html>
