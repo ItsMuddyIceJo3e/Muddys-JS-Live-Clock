@@ -15,16 +15,23 @@
     </style>
   </head>
   <body>
-      <button onclick="document.body.style.backgroundColor = 'black'">Change Background Color</button>
-      <button onsecondclick="document.body.style.backgroundColor = 'white'">Reset Background Color</button>
-      button-align: topcenter;
-
+      <button onclick="toggleBackgroundColor()">Change Background Color</button> 
          <a href='https://github.com/ItsMuddyIceJo3e'>My Github</a>
-         align: topleft;
+         
 
       
         <div id = "live-clock">00:00:00</div>
           <script>
+            function toggleBackgroundColor() {
+              if (document.body.style.backgroundColor === 'black') {
+                document.body.style.backgroundColor = 'white';
+                document.body.style.color = 'black';
+              } else {
+                document.body.style.backgroundColor = 'black';
+                document.body.style.color = 'white';
+              }
+            }
+
             function updateClock() {
               const now = new Date();
               const timeString = now.toLocaleTimeString('en-US', {
