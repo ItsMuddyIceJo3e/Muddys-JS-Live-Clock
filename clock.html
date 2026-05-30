@@ -41,12 +41,16 @@
                 hour12: true,
                 timeZoneName: 'short'
               });
-              document.getElementById('live-clock').textContent = timeString;
-            }
+              document.getElementById('live-clock').textContent = timeString;   
+                              // clock will update every second         
+          if (now.getHours() === 0 && now.getMinutes() === 0 && now.getSeconds() === 0) 
+            alert('It is now midnight! GO TO SLEEP!'); 
+            // will give a midnight alert 
+          }
 
-            // clock will update every second
-            setInterval(updateClock, 1000);
+            setInterval(updateClock, 1000); 
             updateClock(); // initial call to display clock immediately
+            
           </script>
   </body>
 </html>
