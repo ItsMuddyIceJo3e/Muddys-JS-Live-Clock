@@ -1,16 +1,26 @@
-console.log(hello)
- <Script>   
- function updateCustomClock() {
-  const now = new Date(1000);
-    }   
-     document.getElementById('live-clock').textContent = now.toLocaleTimeString();
-     }      
-         setInterval(updateCustomClock, 1000);
+console.log("hello");
 
-            const ampm = hours >= 12 ? 'pm':'am';
-            hours = hours % 12;
+function updateCustomClock() {
+  const now = new Date();
+  let hour = now.getHours();
+  let minute = now.getMinutes();
+  let second = now.getSeconds();
+  const ampm = hour >= 12 ? 'pm':'am';
+  hour = hour % 12 || 12;
+  document.getElementById('live-clock').textContent = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
+}
+  
+  const now = new Date();
+  const timeString = new Intl.DateTimeFormat('en-US', {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false
+  });
 
-              let hours = now.getHours();
-              let minutes = now.getMinutes();
-              let seconds = now.getSeconds();
-          
+  document.getElementById('live-clock').textContent = timeString.format(now);
+
+  updateCustomClock(); // initial call to display clock immediately
+
+   setInterval(updateCustomClock, 1000);
+
