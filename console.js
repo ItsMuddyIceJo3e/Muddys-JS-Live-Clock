@@ -2,7 +2,7 @@ console.log("hello");
 
 function updateCustomClock() {
   const now = new Date();
-  document.getElementById('live-clock').textContent = now.toLocaleTimeString('en-US', {
+  document.getElementById('live-clock').textContent = now.toLocaleTimeString('undefined', {
     hour: '2-digit',
     minute: '2-digit',
     second: '2-digit',
