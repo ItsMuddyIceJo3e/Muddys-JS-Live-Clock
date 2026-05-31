@@ -11,7 +11,7 @@ function updateCustomClock() {
 }
 
 const now = new Date();
-const timeString = new Intl.DateTimeFormat('en-US', {
+const timeString = new Intl.DateTimeFormat('undefined', {
   hour: '2-digit',
   minute: '2-digit',
   second: '2-digit',
